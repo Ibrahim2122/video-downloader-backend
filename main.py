@@ -2,8 +2,17 @@ from fastapi import FastAPI, Form, BackgroundTasks
 from fastapi.responses import FileResponse
 import os
 from downloader import download_video
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # You can restrict this to ["http://localhost:3000", "https://yourdomain.com"]
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/download")
 async def download_route(background_tasks: BackgroundTasks, url: str = Form(...)):
