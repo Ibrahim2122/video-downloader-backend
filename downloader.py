@@ -13,6 +13,7 @@ def download_video(url: str, quality: str = "best") -> str:
         "outtmpl": f"{DOWNLOAD_DIR}/%(title)s.%(ext)s",
         "format": quality,
         "merge_output_format": "mp4",
+        "noplaylist": True,
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
