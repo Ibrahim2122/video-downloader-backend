@@ -8,7 +8,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # You can restrict this to ["http://localhost:3000", "https://yourdomain.com"]
+    allow_origins=["https://ibrahimdev.cloud", "https://vid-download.ibrahimdev.cloud"],  # You can restrict this to ["http://localhost:3000", "https://yourdomain.com"]
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
