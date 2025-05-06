@@ -14,6 +14,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the Video Downloader API!"}
+
 @app.post("/download")
 async def download_route(background_tasks: BackgroundTasks, url: str = Form(...)):
     file_path = download_video(url)
