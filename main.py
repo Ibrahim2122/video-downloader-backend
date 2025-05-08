@@ -29,8 +29,8 @@ async def download_route(background_tasks: BackgroundTasks, url: str = Form(...)
         filename=os.path.basename(file_path)
         )
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("main:app", port=8000, reload=True)
+# if __name__ == "__main__":
+#     import uvicorn
+#     uvicorn.run("main:app", port=8000, reload=True)
 
 
